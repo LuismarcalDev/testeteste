@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos/style.css" media="all">
+    <link rel="stylesheet" href="estilos/media.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=copyright" />
+    <title>Login</title>
+</head>
+
+<body>
+  <script src="https://unpkg.com/scrollreveal"></script>
+
+  <nav class="navbar">
+  <div class="logo">
+    <a href="../../index.html"><img src="Imagens/kochlogo.png" alt="Logo"></a>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="../../index.html">Início</a></li>
+    <li><a href="../../Igor/projeto.tela1 4/index.html">Nossa Historia</a></li>
+    <li><a href="../../Luiz/koch/index.html">Produtos</a></li>
+    <li><a href="../../Igor/projeto.tela1 4/index.html">Como é feito</a></li>
+    <li><a href="../../index.html#localizacao">Localização</a></li>
+    <li><a href="../../index.html#rev">Revendedores</a></li>
+  </ul>
+
+  <a href="#" class="contact-button">
+    <img src="Imagens/telefone.png" class="icon" alt=""> Contato
+  </a>
+
+  <!-- ícone de menu (três pontinhos) -->
+  <div class="menu-toggle">☰</div>
+</nav>
+    <main>
+        <section id="login">
+            <div id="primeiroLado">
+                <h1 id="titulo">Login Administrador</h1>
+                <hr id="linha">
+                <form>
+                    <div class="formulario">
+                        <label for="">Nome</label>
+                        <br>
+                        <input type="text" placeholder="Nome de usuário " required>
+                    </div>
+                    <div class="formulario">
+                        <label for="">Senha</label>
+                        <br>
+                        <input type="password" placeholder="Senha " required>
+                    </div>
+                    <div class="formulario">
+                        <a href="https://studio-pink-tau.vercel.app/structure"><input type="button" id="diff" value="Enviar"></a>
+                    </div>
+                </form>
+            </div>
+            <div id="video">
+                <video id="videoPlayer" autoplay loop muted playsinline></video>
+            </div>
+        </section>
+    </main>
+    <footer class="rodape">
+        <div class="social">
+            <a href="https://www.instagram.com/k.charcutaria/" target="_blank">
+                <img src="../../Julia/Projeto-ElKochi/imgs/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com/kochCharcutariaArtesanal/?locale=pt_BR" target="_blank">
+                <img src="../../Julia/Projeto-ElKochi/imgs/facebook.png" alt="Facebook">
+            </a>
+            <a href="https://api.whatsapp.com/send/?phone=5545999730157&text=ola+tudo+bem%3F&type=phone_number&app_absent=0" target="_blank">
+                <img src="../../Julia/Projeto-ElKochi/imgs/whatsapp.png" alt="WhatsApp">
+            </a>
+        </div>
+        <div class="marca">KOCH</div>
+        <p class="subtitulo">Embutidos e Defumados</p>
+        <p class="copy">© 2025 Grupo Koch. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="menu-toggle.js"></script>
+    <script>
+        // Função para escolher o vídeo baseado no horário do dia
+        function escolherVideoPorHorario() {
+            const agora = new Date();
+            const hora = agora.getHours();
+            const video = document.getElementById('videoPlayer');
+            
+            let videoSrc = '';
+            
+            // Manhã: 6h - 11h59
+            if (hora >= 6 && hora < 12) {
+                videoSrc = 'Imagens/video-kochi.mp4';
+            }
+            // Tarde: 12h - 17h59
+            else if (hora >= 12 && hora < 18) {
+                videoSrc = 'Imagens/BOA TARDE (1).mp4';
+            }
+            // Noite: 18h - 5h59
+            else {
+                videoSrc = 'Imagens/BOA NOITE.mp4';
+            }
+            
+            if (video && videoSrc) {
+                video.src = videoSrc;
+                video.muted = true;
+                video.load(); // Recarrega o vídeo com a nova fonte
+                
+                // Tenta reproduzir o vídeo
+                video.play().catch(function(error) {
+                    console.log('Autoplay bloqueado, aguardando interação do usuário');
+                });
+            }
+        }
+        
+        // Executa quando a página carregar
+        document.addEventListener('DOMContentLoaded', function() {
+            escolherVideoPorHorario();
+        });
+    </script>
+</body>
+
+</html>

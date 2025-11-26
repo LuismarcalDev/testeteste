@@ -1,0 +1,258 @@
+@charset "UTF-8";
+
+/* celular */
+@media (max-width: 768px) {
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #850d15;
+    position: fixed;
+    top: 70px;
+    right: 0;
+    text-align: center;
+    padding: 20px 0;
+    gap: 30px;
+    z-index: 9999;
+    width: 180px;
+    height: 100dvh;
+          opacity: 0;
+  transform: translateY(10px);
+  animation: faderesponsive 0.4s ease forwards;
+  }
+  @keyframes faderesponsive {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+  .nav-links.show {
+    display: flex;
+    
+  }
+  nav .nav-links.show a{
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+
+}
+  nav .nav-links.show a:hover{
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  color: silver;
+  transition: 500ms;
+  
+}
+
+  .menu-toggle {
+    display: block; 
+
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 15px 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+ .contact-button {
+    background-color: #b76a21;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 130px;
+  }
+
+  .logo img {
+    height: 50px;
+  }
+
+  .footer-custom {
+    padding: 20px 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .footer-logo .text-logo {
+    font-size: 18px;
+  }
+
+  .slogan {
+    font-size: 12px;
+  }
+}
+
+/* tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+ 
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    position: static;
+    width: auto;
+    gap: 20px;
+    padding: 0;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .contact-button {
+    background-color: #b76a21;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+
+nav .nav-links a{
+  font-size: 14px;
+}
+
+  .footer-custom {
+    padding: 30px 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .footer-logo .text-logo {
+    font-size: 22px;
+  }
+
+  .slogan {
+    font-size: 13px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    #login {
+        width: 50vw;
+    }
+    #login > hr {
+        width: 49vw;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #login {
+        width: 50vw;
+        border: none;
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    #login > hr {
+        width: 80%;
+    }
+
+    footer > div > span {
+        display: block;
+    }
+
+    #foot {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        height: 20px;
+    }
+
+    #medias {
+        display: block;
+    }
+
+    main {
+        height: 75.1vh;
+    }
+    
+
+    .footer-custom {
+        height: auto;
+        position: relative;
+        font-family: var(--font);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #foot > span {
+        font-size: 15px;
+    }
+
+    header > img {
+        width: 100px;
+
+        position: absolute;
+        top: 45%;
+        left: 50%;
+
+        transform: translate(-50%,-50%);
+    }
+
+    #medias {
+        width: 330px;
+        text-align: center;
+
+        position: absolute;
+        left: 50%;
+        top: 50%;
+
+        transform: translate(-50%,-50%);
+    }
+
+    #medias {
+        color: white;
+    }
+
+    #efeito {
+        color: rgba(255, 166, 0, 0.847);
+    }
+
+    #primeiroLado {
+        width: 46%;
+        padding: 22px;
+        border-right: none;
+        float: left;
+    }
+
+    #video {
+        display: block;
+        width: 46%;
+    }
+
+    video {
+        width: 100%;
+        height: 460px;
+    }
+}

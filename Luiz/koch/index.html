@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/styles/Produtos.css" />
+     <script src="https://unpkg.com/scrollreveal"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Login</title>
+  </head>
+  <body>
+    <header>
+      <a href="../../index.html"><img src="src/img/logo.png" alt="logo koch charcutaria" /></a>
+      <div class="menu">
+        <a href="../../index.html">Inicio</a>
+        <a href="../../Igor/projeto.tela1 4/index.html">Nossa Historia</a>
+        <a href="../../Luiz/koch/index.html">Produtos</a>
+        <a href="../../Igor/projeto.tela1 4/index.html">Como é feito</a>
+        <a href="../../index.html#localizacao">Localização</a>
+        <a href="../../index.html#rev">Revendedores</a>
+        <a href="../../Pedro/LoginKochi - Flex(teste)/index.html">Administrador</a>
+      </div>
+      <div class="cesta10">
+        <div style="display: flex; flex-direction: column; position: relative">
+          <div class="solo">
+            <p id="carrinho" style="font-family: poppins;" onclick="Cart()">0</p>
+            <img src="src/img/cesta 1.png" alt="" onclick="Cart()" />
+          </div>
+
+          <div class="conteudoCarrinho" id="cart">
+            <div class="title-Central">
+              <h2>Veja como está seu Pedido</h2>
+              <hr />
+            </div>
+
+            <div id="carts" class="cont-Produtos"></div>
+            <div class="finalizar">
+              <h2 id="valorReal">Total R$ 00,00</h2>
+
+             
+              <button
+                style="cursor: pointer"
+                class="btn-solo"
+                onclick="Finalizar()"
+              >
+                Finalizar
+              </button>
+            </div>
+          </div>
+        </div>
+
+         <i id="menuIcon" class="fa-solid fa-bars" onclick="sidebarOpen()"></i>
+
+       
+
+        <button class="ioio">
+          <i class="fa-solid fa-phone"></i>
+          Contato
+        </button>
+      </div>
+    </header>
+
+    <main>
+        <div class="menu-responsive" id="menu-responsive">
+            <div class="title-responsive" onclick="sidebarClose()">
+            <i class="fa-solid fa-bars"></i>
+              <p>Menu</p>
+            </div>
+            <div class="menu-responsive-links">
+         <a href="../../index.html">Inicio</a>
+        <a href="../../Igor/projeto.tela1 4/index.html">Nossa Historia</a>
+        <a href="../../Luiz/koch/index.html">Produtos</a>
+        <a href="../../Igor/projeto.tela1 4/index.html">Como é feito</a>
+        <a href="../../index.html#localizacao">Localização</a>
+        <a href="../../index.html#rev">Revendedores</a>
+
+        <button id="contatoResponsive">
+          Contato
+        </button>
+            </div>
+         </div>
+      <div class="title-Produto">
+        <h2 class="h22">Nossos Produtos</h2>
+        <hr />
+      </div>
+
+     <div>
+  <select name="categorias" id="selectCategoria" onchange="Categorias(this.value)">
+    <option value="todas">Categorias</option>
+    <option value="Linguiças">Linguiças</option>
+    <option value="Salames">Salames</option>
+    <option value="Defumados">Defumados</option>
+  </select>
+</div>
+
+    
+      <div class="centralProdutos">
+       
+      </div>
+    </main>
+    <footer class="rodape">
+        <div class="social">
+            <a href="https://www.instagram.com/k.charcutaria/" target="_blank">
+                <img src="../../Julia/Projeto-ElKochi/imgs/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com/kochCharcutariaArtesanal/?locale=pt_BR" target="_blank">
+                <img src="../../Julia/Projeto-ElKochi/imgs/facebook.png" alt="Facebook">
+            </a>
+            <a href="https://api.whatsapp.com/send/?phone=5545999730157&text=ola+tudo+bem%3F&type=phone_number&app_absent=0" target="_blank">
+                <img src="../../Julia/Projeto-ElKochi/imgs/whatsapp.png" alt="WhatsApp">
+            </a>
+        </div>
+        <div class="marca">KOCH</div>
+        <p class="subtitulo">Embutidos e Defumados</p>
+        <p class="copy">© 2025 Grupo Koch. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="src/js/produtos.js"></script>
+    <script src="src/js/animation.js"></script>
+  </body>
+</html>
