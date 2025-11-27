@@ -59,7 +59,9 @@
     width: 100%;
     box-sizing: border-box;
   }
-
+#login{
+  left: 50%;
+}
  .contact-button {
     background-color: #b76a21;
     color: white;
@@ -160,11 +162,13 @@ nav .nav-links a{
 @media screen and (min-width: 768px) and (max-width: 992px) {
     #login {
         width: 50vw;
+          left: 50%;
     }
     #login > hr {
         width: 49vw;
     }
 }
+
 
 @media screen and (min-width: 992px) {
     #login {
@@ -172,6 +176,7 @@ nav .nav-links a{
         border: none;
         display: flex;
         flex-flow: row wrap;
+        
     }
 
     #login > hr {

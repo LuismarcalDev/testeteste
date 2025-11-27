@@ -122,6 +122,7 @@
 .localizacao {
     padding: 60px 8%; /* Padding padrão para desktop */
     background-color: #fff;
+    margin-top: 100px;
 }
 
 .localizacao h2 {
@@ -147,6 +148,7 @@
     align-items: flex-start;
     gap: 40px;
     flex-wrap: wrap;
+    
 }
 
 .coluna-mapa {
@@ -173,6 +175,7 @@
     flex-direction: column;
     align-items: center;
     position: relative;
+    top: -150px;
 }
 
 /* Certifique-se de que a imagem bandeira.png esteja no caminho correto! */
@@ -182,21 +185,37 @@
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
     text-align: center;
-    width: 100%;
-    height: 200px;
+    width: 110%;
+    height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
     letter-spacing: 0.5px;
+    padding-bottom: 35px;
+    z-index: 999;
 }
 
 .card-horario {
-    width: 85%;
-    background-color: #fff7ee;
+    width: 73%;
+    background-color: #f5ece3ea;
     padding: 22px 28px 18px;
     border-radius: 0 0 12px 12px;
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
-    margin-top: -55px;
+    margin-top: -160px;
+    padding-top: 50px;
+    height: 330px;
+    border: 1px solid rgba(26, 26, 26, 0.11);
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.4s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .linha-horario {
@@ -204,7 +223,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
-    border-bottom: 1px solid #f0d7c0;
+    border-bottom: 1px solid #af7f51;
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
     color: #4a2c2a;
@@ -286,6 +305,7 @@ RESPONSIVIDADE (MEDIA QUERIES)
     }
     .texto-qualidade {
         padding: 24px;
+      
     }
     .imagens-cert img {
         width: 190px;
@@ -307,6 +327,18 @@ RESPONSIVIDADE (MEDIA QUERIES)
 /* --- PARA CELULARES (Largura até 768px) --- 
 */
 @media (max-width: 768px) {
+
+        .coluna-horario{
+            top: 50px;
+        }
+
+           .card-horario {
+        width: 65%;
+        margin-top: -140px;
+        padding-top: 90px;
+    }
+
+
     /* Geral: Reduzir padding vertical e horizontal */
     .certificado, .localizacao {
         padding: 40px 4%; 
@@ -414,10 +446,7 @@ RESPONSIVIDADE (MEDIA QUERIES)
     }
 
     /* Localização: Reduzir a margem negativa do card de horário */
-    .card-horario {
-        width: 95%;
-        margin-top: -30px;
-    }
+ 
 
     /* Rodapé: Centralizar e reduzir texto */
     .rodape {
@@ -427,5 +456,14 @@ RESPONSIVIDADE (MEDIA QUERIES)
     .marca {
         font-size: 20px;
     }
+.texto-qualidade{
+      display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 83%;
+        
+}
+
     
 }

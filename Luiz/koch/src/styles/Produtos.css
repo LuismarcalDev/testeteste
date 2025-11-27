@@ -77,10 +77,10 @@ main {
   border-top-left-radius: 10px;
   box-shadow: 2px 5px 15px 3px rgba(99, 99, 99, 0.075);
   border-top-right-radius: 10px;
-  cursor: pointer;
+ 
 }
 .preco-produto{
-  color: rgb(145, 81, 81);
+  color: rgb(0, 0, 0);
   font-weight: 500;
   font-size: 14px;
   

@@ -264,7 +264,7 @@ function Finalizar() {
   }
 
   let mensagem =
-    "Oi, boa tarde!\nGostaria de fazer um pedido com os seguintes itens:\n";
+    "Olá, boa Noite!\nGostaria de fazer um pedido com os seguintes itens:\n";
   let total = 0;
 
   produtosNoCarrinho.forEach((produto) => {
@@ -281,7 +281,7 @@ function Finalizar() {
 
   mensagem += `Total: R$ ${total.toFixed(2)}`;
 
-  const numero = "554598475180";
+  const numero = "554599730157";
   const mensagemEncode = encodeURIComponent(mensagem);
   const link = `https://wa.me/${numero}?text=${mensagemEncode}`;
 

@@ -389,3 +389,41 @@ const copyright = criarElemento('p', 'copy', '© 2025 Grupo Koch. Todos os direi
 
 footer.append(social, marca, subtituloMarca, copyright);
 document.body.appendChild(footer);
+
+/* ===== SCROLL REVEAL ANIMATIONS ===== */
+// Aguarda o DOM estar completamente carregado
+setTimeout(() => {
+    // Título da seção de produtos
+    ScrollReveal().reveal(".produtos-header h2", {
+        origin: "left",
+        duration: 1200,
+        distance: "50px",
+        easing: "ease-out"
+    });
+
+    // Cards de produtos (Nossos Produtos Mais Vendidos)
+    ScrollReveal().reveal(".card", {
+        origin: "bottom",
+        duration: 1200,
+        distance: "60px",
+        easing: "ease-out",
+        interval: 150
+    });
+
+    // Título da seção de revendedores
+    ScrollReveal().reveal(".revendedores h2", {
+        origin: "left",
+        duration: 1200,
+        distance: "50px",
+        easing: "ease-out"
+    });
+
+    // Imagens dos revendedores
+    ScrollReveal().reveal(".grid-rev img", {
+        origin: "bottom",
+        duration: 1200,
+        distance: "60px",
+        easing: "ease-out",
+        interval: 150
+    });
+}, 500);
