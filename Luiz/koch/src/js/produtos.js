@@ -4,6 +4,37 @@ let arrayProdutos = [];
 let numero = 1;
 let abrir = false;
 
+/* ===== FUNÇÃO DE NOTIFICAÇÃO TOAST ===== */
+function showToast(message, type = 'success') {
+  const container = document.getElementById('toast-container');
+  if (!container) return;
+
+  const toast = document.createElement('div');
+  toast.className = `toast toast-${type}`;
+  
+  const icon = type === 'success' ? '✓' : '✕';
+  toast.innerHTML = `
+    <span class="toast-icon">${icon}</span>
+    <span>${message}</span>
+  `;
+
+  container.appendChild(toast);
+
+  // Força reflow para ativar animação
+  setTimeout(() => {
+    toast.classList.add('show');
+  }, 10);
+
+  // Remove após 1.5 segundos
+  setTimeout(() => {
+    toast.classList.remove('show');
+    toast.classList.add('hide');
+    setTimeout(() => {
+      toast.remove();
+    }, 300);
+  }, 1500);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   carregarProdutos();
   carregarCarrinhoLocal();
@@ -118,6 +149,7 @@ async function ProdutoCarrinhoSolo(id) {
       atualizarTotal();
       salvarCarrinhoLocal();
       document.getElementById("carrinho").textContent = valorSoma.length;
+      showToast(`${item.nome} adicionado ao carrinho!`, 'success');
       return;
     }
 
@@ -141,15 +173,18 @@ async function ProdutoCarrinhoSolo(id) {
     div.querySelector("#lixeira").addEventListener("click", () => {
       const qtdEl = div.querySelector("#viuvi2");
       let qtdAtual = parseInt(qtdEl.textContent);
+      const nomeProduto = div.querySelector("h4").textContent;
 
       if (qtdAtual > 1) {
         qtdEl.textContent = `${qtdAtual - 1}X`;
         const index = valorSoma.indexOf(item.preco);
         if (index !== -1) valorSoma.splice(index, 1);
+        showToast(`Quantidade de ${nomeProduto} reduzida`, 'error');
       } else {
         div.remove();
         const index = valorSoma.indexOf(item.preco);
         if (index !== -1) valorSoma.splice(index, 1);
+        showToast(`${nomeProduto} removido do carrinho`, 'error');
       }
 
       atualizarTotal();
@@ -162,6 +197,7 @@ async function ProdutoCarrinhoSolo(id) {
     container.appendChild(div);
     salvarCarrinhoLocal();
     document.getElementById("carrinho").textContent = valorSoma.length;
+    showToast(`${item.nome} adicionado ao carrinho!`, 'success');
   });
 }
 
@@ -220,15 +256,18 @@ function carregarCarrinhoLocal() {
     div.querySelector("#lixeira").addEventListener("click", () => {
       const qtdEl = div.querySelector("#viuvi2");
       let qtdAtual = parseInt(qtdEl.textContent);
+      const nomeProduto = div.querySelector("h4").textContent;
 
       if (qtdAtual > 1) {
         qtdEl.textContent = `${qtdAtual - 1}X`;
         const index = valorSoma.indexOf(item.preco);
         if (index !== -1) valorSoma.splice(index, 1);
+        showToast(`Quantidade de ${nomeProduto} reduzida`, 'error');
       } else {
         div.remove();
         const index = valorSoma.indexOf(item.preco);
         if (index !== -1) valorSoma.splice(index, 1);
+        showToast(`${nomeProduto} removido do carrinho`, 'error');
       }
 
       salvarCarrinhoLocal();
