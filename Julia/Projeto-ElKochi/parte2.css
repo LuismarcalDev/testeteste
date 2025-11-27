@@ -64,17 +64,18 @@
 
 .imagens-cert {
     flex: 0 0 28%;
-    display: flex;
-    flex-direction: column;
+       display: flex;
+    flex-direction: row;
     gap: 25px;
     align-items: center;
 }
 
 .imagens-cert img {
     width: 230px;
-    height: 230px;
+
+
     object-fit: cover;
-    border-radius: 50%;
+    
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -197,7 +198,7 @@
 
 .card-horario {
     width: 73%;
-    background-color: #f5ece3ea;
+    background-color: #f8f6f1;
     padding: 22px 28px 18px;
     border-radius: 0 0 12px 12px;
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
@@ -359,6 +360,7 @@ RESPONSIVIDADE (MEDIA QUERIES)
     gap: 25px;
     align-items: center;
 }
+
     .texto-cert,
     .imagens-cert {
         width: 100%;
@@ -369,16 +371,11 @@ RESPONSIVIDADE (MEDIA QUERIES)
     }
 
     /* Certificado: Reduzir ícones de certificado */
-    .imagens-cert {
-        flex-wrap: wrap; /* Permite que os ícones quebrem a linha se necessário */
-        justify-content: center;
-        gap: 10px;
+    .imagens-cert img{
+     border-radius: 10%;
     }
 
-    .imagens-cert img {
-        width: 160px; /* Reduz drasticamente o tamanho dos ícones */
-        height: 160px;
-    }
+  
     
     /* Revendedores: Ajustar altura fixa e mudar para uma única coluna */
     .rev {

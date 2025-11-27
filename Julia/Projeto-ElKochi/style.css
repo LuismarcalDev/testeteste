@@ -570,6 +570,11 @@ background-color: rgb(218, 217, 217);
         transform: translateY(10px);
         animation: faderesponsive 0.4s ease forwards;
     }
+    .section-info h2::after {
+    display: none;
+    
+}
+
 
     @keyframes faderesponsive {
         to {
@@ -634,17 +639,28 @@ background-color: rgb(218, 217, 217);
     .texto-banner p{
         font-size: 16px;
         margin-top: -40px;
+       
     }
     .section-info img{
-        width: 50%;
+    display: none;
     }
     .section-info h2{
         margin-top: 10px;
         margin-bottom: -15px;
+        text-align: center;
+        position: relative;
+        left: 20px;
+       
     }
     .section-info p{
         margin-top: 30px;
+         width: 100%;
+       text-align: justify;
+       position: relative;
+       left: 17px;
+      
     }
+
     .produtos-grid{
         gap:40px;
     }
